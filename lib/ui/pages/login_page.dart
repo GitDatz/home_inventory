@@ -11,6 +11,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String _email;
+  String _password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,18 +25,71 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              child: Text("Login"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage(title: MAIN_PAGE_TITLE)));
-              }
-            )
-          ],
-        ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _usernameField(),
+              _passwordField(),
+              _loginButton(context)
+            ],
+          )
       ),
+    );
+  }
+
+  Widget _usernameField() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 5.0),
+      child: TextFormField(
+        autofocus: false,
+        maxLines: 1,
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.mail,
+            color: Colors.blueAccent,
+          ),
+          hintText: EMAIL_HINT,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.zero
+          )
+        ),
+        validator: (value) => value.isEmpty ? EMAIL_VALIDATOR_ERROR : null,
+        onSaved: (value) => _email = value.trim(),
+      ),
+    );
+  }
+
+  Widget _passwordField() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 5.0),
+      child: TextFormField(
+        autofocus: false,
+        maxLines: 1,
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.lock,
+            color: Colors.blueAccent,
+          ),
+          hintText: PASSWORD_HINT,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.zero
+          )
+        ),
+        validator: (value) => value.isEmpty ? PASSWORD_VALIDATOR_ERROR : null,
+        onSaved: (value) => _password = value.trim(),
+      ),
+    );
+  }
+
+  Widget _loginButton(BuildContext context) {
+    return ElevatedButton(
+        child: Text(LOGIN_BUTTON_TEXT),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => MainPage(title: MAIN_PAGE_TITLE)));
+        }
     );
   }
 }
