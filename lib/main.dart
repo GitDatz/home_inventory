@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:home_inventory/ui/pages/main_page.dart';
+import 'package:home_inventory/constants.dart';
+import 'package:home_inventory/ui/pages/login_page.dart';
 
 void main() {
   runApp(HomeInventoryApp());
@@ -13,7 +14,7 @@ class HomeInventoryApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: MainPage(title: 'Home Inventory'),
+      home: LoginPage(title: LOGIN_PAGE_TITLE),
     );
   }
 }
