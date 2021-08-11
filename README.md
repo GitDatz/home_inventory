@@ -1,3 +1,3 @@
-# home_inventory
+# Home Inventory
 
-Home Inventory app in Flutter.
+App written in Flutter that keeps inventory of groceries.
