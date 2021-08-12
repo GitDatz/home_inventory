@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:home_inventory/constants.dart';
+import 'package:home_inventory/ui/pages/inventory_page.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key key, this.title}) : super(key: key);
@@ -23,7 +25,7 @@ class _MainPageState extends State<MainPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _checkInventory(),
+            _checkInventory(context),
             _addItemButton(),
             _removeItemButton()
           ],
@@ -32,24 +34,27 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget _checkInventory() {
+  Widget _checkInventory(BuildContext context) {
     return ElevatedButton(
-        onPressed: () => {},
-        child: Text("Check Inventory")
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => InventoryPage(title: INVENTORY_TITLE)));
+        },
+        child: Text(CHECK_INVENTORY_BUTTON_TEXT)
     );
   }
 
   Widget _addItemButton() {
     return ElevatedButton(
         onPressed: () => {},
-        child: Text("Add Item")
+        child: Text(ADD_ITEM_BUTTON_TEXT)
     );
   }
 
   Widget _removeItemButton() {
     return ElevatedButton(
         onPressed: () => {},
-        child: Text("Remove Item")
+        child: Text(REMOVE_ITEM_BUTTON_TEXT)
     );
   }
 }
