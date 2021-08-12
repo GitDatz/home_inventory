@@ -19,6 +19,37 @@ class _MainPageState extends State<MainPage> {
               textAlign: TextAlign.center
           ),
         ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _checkInventory(),
+            _addItemButton(),
+            _removeItemButton()
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _checkInventory() {
+    return ElevatedButton(
+        onPressed: () => {},
+        child: Text("Check Inventory")
+    );
+  }
+
+  Widget _addItemButton() {
+    return ElevatedButton(
+        onPressed: () => {},
+        child: Text("Add Item")
+    );
+  }
+
+  Widget _removeItemButton() {
+    return ElevatedButton(
+        onPressed: () => {},
+        child: Text("Remove Item")
     );
   }
 }
