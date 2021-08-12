@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:home_inventory/constants.dart';
 import 'package:home_inventory/ui/pages/add_item.dart';
 import 'package:home_inventory/ui/pages/inventory_page.dart';
+import 'package:home_inventory/ui/pages/remove_item.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key key, this.title}) : super(key: key);
@@ -28,7 +29,7 @@ class _MainPageState extends State<MainPage> {
           children: [
             _checkInventory(context),
             _addItemButton(context),
-            _removeItemButton()
+            _removeItemButton(context)
           ],
         ),
       ),
@@ -55,9 +56,12 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget _removeItemButton() {
+  Widget _removeItemButton(BuildContext context) {
     return ElevatedButton(
-        onPressed: () => {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => RemoveItemPage(title: REMOVE_ITEM_TITLE)));
+        },
         child: Text(REMOVE_ITEM_BUTTON_TEXT)
     );
   }
