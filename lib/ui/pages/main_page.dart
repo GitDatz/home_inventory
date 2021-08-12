@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_inventory/constants.dart';
+import 'package:home_inventory/ui/pages/add_item.dart';
 import 'package:home_inventory/ui/pages/inventory_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -26,7 +27,7 @@ class _MainPageState extends State<MainPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _checkInventory(context),
-            _addItemButton(),
+            _addItemButton(context),
             _removeItemButton()
           ],
         ),
@@ -44,9 +45,12 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget _addItemButton() {
+  Widget _addItemButton(BuildContext context) {
     return ElevatedButton(
-        onPressed: () => {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+              builder: (context) => AddItemPage(title: ADD_ITEM_TITLE)));
+        },
         child: Text(ADD_ITEM_BUTTON_TEXT)
     );
   }
