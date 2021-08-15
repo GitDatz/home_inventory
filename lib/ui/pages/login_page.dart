@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _usernameField() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 5.0),
+      padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 5.0),
       child: TextFormField(
         autofocus: false,
         maxLines: 1,
@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
         decoration: InputDecoration(
           prefixIcon: Icon(
             Icons.mail,
-            color: Colors.blueAccent,
+            color: Colors.blueGrey,
           ),
           hintText: EMAIL_HINT,
           border: OutlineInputBorder(
@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _passwordField() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 5.0),
+      padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 5.0),
       child: TextFormField(
         autofocus: false,
         maxLines: 1,
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
         decoration: InputDecoration(
           prefixIcon: Icon(
             Icons.lock,
-            color: Colors.blueAccent,
+            color: Colors.blueGrey,
           ),
           hintText: PASSWORD_HINT,
           border: OutlineInputBorder(
@@ -84,12 +84,19 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _loginButton(BuildContext context) {
-    return ElevatedButton(
-        child: Text(LOGIN_BUTTON_TEXT),
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(
+    return Padding(
+      padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 0.0),
+      child: SizedBox(
+        height: 50.0,
+        width: double.infinity,
+        child: ElevatedButton(
+          child: Text(LOGIN_BUTTON_TEXT),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
               builder: (context) => MainPage(title: MAIN_PAGE_TITLE)));
-        }
+          }
+        )
+      )
     );
   }
 }
