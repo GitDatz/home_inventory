@@ -37,32 +37,71 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget _checkInventory(BuildContext context) {
-    return ElevatedButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(
+    return Padding(
+      padding: EdgeInsets.fromLTRB(SIDE_PADDING, 0.0, SIDE_PADDING, 0.0),
+      child: SizedBox(
+        height: BUTTON_HEIGHT,
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
               builder: (context) => InventoryPage(title: INVENTORY_TITLE)));
-        },
-        child: Text(CHECK_INVENTORY_BUTTON_TEXT)
+          },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.assessment_outlined, size: BUTTON_ICON_SIZE),
+                Text(CHECK_INVENTORY_BUTTON_TEXT, textAlign: TextAlign.center,)
+              ],
+            )
+        )
+      )
     );
   }
 
   Widget _addItemButton(BuildContext context) {
-    return ElevatedButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(
+    return Padding(
+      padding: EdgeInsets.fromLTRB(SIDE_PADDING, BUTTON_VERTICAL_MARGIN, SIDE_PADDING, 0.0),
+      child: SizedBox(
+        height: BUTTON_HEIGHT,
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
               builder: (context) => AddItemPage(title: ADD_ITEM_TITLE)));
-        },
-        child: Text(ADD_ITEM_BUTTON_TEXT)
+          },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.add_business_outlined, size: BUTTON_ICON_SIZE),
+              Text(ADD_ITEM_BUTTON_TEXT, textAlign: TextAlign.center,)
+            ],
+          )
+        )
+      )
     );
   }
 
   Widget _removeItemButton(BuildContext context) {
-    return ElevatedButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(
+    return Padding(
+      padding: EdgeInsets.fromLTRB(SIDE_PADDING, BUTTON_VERTICAL_MARGIN, SIDE_PADDING, 0.0),
+      child: SizedBox(
+        height: BUTTON_HEIGHT,
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
               builder: (context) => RemoveItemPage(title: REMOVE_ITEM_TITLE)));
-        },
-        child: Text(REMOVE_ITEM_BUTTON_TEXT)
+          },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.delete_forever_outlined, size: BUTTON_ICON_SIZE),
+              Text(REMOVE_ITEM_BUTTON_TEXT, textAlign: TextAlign.center,)
+            ],
+          )
+        )
+      )
     );
   }
 }

@@ -16,6 +16,10 @@ const String PASSWORD_VALIDATOR_ERROR = "Password cannot be empty";
 const String CHECK_INVENTORY_BUTTON_TEXT = "Check Inventory";
 const String ADD_ITEM_BUTTON_TEXT = "Add Item";
 const String REMOVE_ITEM_BUTTON_TEXT = "Remove Item";
+const double BUTTON_ICON_SIZE = 100.0;
+const double BUTTON_HEIGHT = 150.0;
+const double BUTTON_VERTICAL_MARGIN = 5.0;
+const double SIDE_PADDING = 15.0;
 
 // Add/Remove Item Page
 const String SCAN_ITEM_BUTTON_TEXT = "Scan Item";
