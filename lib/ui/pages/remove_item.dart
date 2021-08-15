@@ -32,9 +32,22 @@ class _RemoveItemPageState extends State<RemoveItemPage> {
   }
 
   Widget _scanItemButton() {
-    return ElevatedButton(
-        onPressed: () => {},
-        child: Text(SCAN_ITEM_BUTTON_TEXT)
+    return Padding(
+      padding: EdgeInsets.fromLTRB(SIDE_PADDING, 0.0, SIDE_PADDING, 0.0),
+      child: SizedBox(
+        height: BUTTON_HEIGHT,
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () => {},
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.camera_alt_outlined, size: BUTTON_ICON_SIZE),
+              Text(SCAN_ITEM_BUTTON_TEXT)
+            ],
+          )
+        )
+      )
     );
   }
 }
