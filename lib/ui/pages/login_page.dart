@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
     return Padding(
       padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 0.0),
       child: SizedBox(
-        height: 50.0,
+        height: LOGIN_BUTTON_HEIGHT,
         width: double.infinity,
         child: ElevatedButton(
           child: Text(LOGIN_BUTTON_TEXT),

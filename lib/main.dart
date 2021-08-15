@@ -12,6 +12,7 @@ class HomeInventoryApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: BACKGROUND_COLOR,
         primarySwatch: Colors.blueGrey,
       ),
       home: LoginPage(title: LOGIN_PAGE_TITLE),
