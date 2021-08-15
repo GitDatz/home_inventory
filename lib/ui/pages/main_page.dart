@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_inventory/constants.dart';
 import 'package:home_inventory/ui/pages/add_item.dart';
-import 'package:home_inventory/ui/pages/inventory_page.dart';
+import 'package:home_inventory/ui/pages/choose_category_page.dart';
 import 'package:home_inventory/ui/pages/remove_item.dart';
 
 class MainPage extends StatefulWidget {
@@ -45,7 +45,7 @@ class _MainPageState extends State<MainPage> {
         child: ElevatedButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(
-              builder: (context) => InventoryPage(title: INVENTORY_TITLE)));
+              builder: (context) => ChooseCategoryPage(title: CHOOSE_CATEGORY_TITLE)));
           },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
