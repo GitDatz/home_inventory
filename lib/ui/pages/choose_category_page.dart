@@ -53,11 +53,7 @@ class _ChooseCategoryPageState extends State<ChooseCategoryPage> {
               Expanded(child: _veggiesButton(), flex: 1)
             ],
           ),
-          Row(
-            children: [
-              Expanded(child: _showAllButton(), flex: 1)
-            ]
-          ),
+          Expanded(child: SizedBox(width: double.infinity, child: _showAllButton()), flex: 1)
         ]
       )
     );
@@ -225,7 +221,7 @@ class _ChooseCategoryPageState extends State<ChooseCategoryPage> {
 
   Widget _showAllButton() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 5.0),
+      padding: EdgeInsets.fromLTRB(10.0, 2.5, 10.0, 5.0),
       child: ElevatedButton(
         onPressed: () => {},
         child: Column(
