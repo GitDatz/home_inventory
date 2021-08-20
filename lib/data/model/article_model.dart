@@ -5,4 +5,8 @@ class Article {
   int nrQuantity;
 
   Article({this.id, this.name, this.quantity, this.nrQuantity});
+
+  factory Article.fromJson() {
+    
+  }
 }
