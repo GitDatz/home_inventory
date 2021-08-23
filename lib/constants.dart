@@ -42,3 +42,10 @@ const String SHOW_ALL_BUTTON_TEXT = "Show All";
 
 // Add/Remove Item Page
 const String SCAN_ITEM_BUTTON_TEXT = "Scan Item";
+
+// Backend
+const String COLLECTION = "articles";
+const String JSON_ID = "id";
+const String JSON_NAME = "name";
+const String JSON_QUANTITY = "quantity";
+const String JSON_NR_QUANTITY = "nr_quantity";
