@@ -1,8 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:home_inventory/constants.dart';
-import 'package:home_inventory/ui/pages/login_page.dart';
+import 'package:home_inventory/ui/pages/root_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(HomeInventoryApp());
 }
 
@@ -15,7 +18,7 @@ class HomeInventoryApp extends StatelessWidget {
         scaffoldBackgroundColor: BACKGROUND_COLOR,
         primarySwatch: Colors.blueGrey,
       ),
-      home: LoginPage(title: LOGIN_PAGE_TITLE),
+      home: RootPage(),
     );
   }
 }
