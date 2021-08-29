@@ -3,7 +3,7 @@ import 'package:home_inventory/constants.dart';
 import 'package:home_inventory/ui/pages/add_item.dart';
 import 'package:home_inventory/ui/pages/choose_category_page.dart';
 import 'package:home_inventory/ui/pages/remove_item.dart';
-import 'package:home_inventory/ui/transitions/RouteTransition.dart';
+import 'package:home_inventory/ui/transitions/route_transition.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key key, this.title}) : super(key: key);
