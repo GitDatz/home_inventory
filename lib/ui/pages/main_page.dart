@@ -3,6 +3,7 @@ import 'package:home_inventory/constants.dart';
 import 'package:home_inventory/ui/pages/add_item.dart';
 import 'package:home_inventory/ui/pages/choose_category_page.dart';
 import 'package:home_inventory/ui/pages/remove_item.dart';
+import 'package:home_inventory/ui/transitions/RouteTransition.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key key, this.title}) : super(key: key);
@@ -44,8 +45,7 @@ class _MainPageState extends State<MainPage> {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) => ChooseCategoryPage(title: CHOOSE_CATEGORY_TITLE)));
+            Navigator.push(context, RouteTransition(startPage: this.widget, destinationPage: ChooseCategoryPage(title: CHOOSE_CATEGORY_TITLE)));
           },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -67,8 +67,7 @@ class _MainPageState extends State<MainPage> {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) => AddItemPage(title: ADD_ITEM_TITLE)));
+            Navigator.push(context, RouteTransition(startPage: this.widget, destinationPage: AddItemPage(title: ADD_ITEM_TITLE)));
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -90,8 +89,7 @@ class _MainPageState extends State<MainPage> {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) => RemoveItemPage(title: REMOVE_ITEM_TITLE)));
+            Navigator.push(context, RouteTransition(startPage: this.widget, destinationPage: RemoveItemPage(title: REMOVE_ITEM_TITLE)));
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
