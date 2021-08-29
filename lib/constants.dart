@@ -47,5 +47,6 @@ const String SCAN_ITEM_BUTTON_TEXT = "Scan Item";
 const String COLLECTION = "articles";
 const String JSON_ID = "id";
 const String JSON_NAME = "name";
+const String JSON_CATEGORY = "category";
 const String JSON_QUANTITY = "quantity";
 const String JSON_NR_QUANTITY = "nr_quantity";

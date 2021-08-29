@@ -20,6 +20,14 @@ class ArticleDao {
     ).toList();
   }
 
+  Future<List<Article>> getArticlesFromCategory(String category) async {
+    final database = await _databaseProvider.database;
+    QuerySnapshot querySnapshot = await database.collection(COLLECTION).get();
+    return querySnapshot.docs.map((doc) =>
+        Article(id: doc.id, name: doc[JSON_NAME], quantity: doc[JSON_QUANTITY], nrQuantity: doc[JSON_NR_QUANTITY])
+    ).where((article) => (article.category == category)).toList();
+  }
+
   Future<void> update(Article article) async {
     final database = await _databaseProvider.database;
     return database.collection(COLLECTION).doc(article.id).update(article.toJson());
