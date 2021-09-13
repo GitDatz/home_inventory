@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:home_inventory/constants.dart';
-import 'package:home_inventory/ui/pages/add_item.dart';
+import 'package:home_inventory/utils/constants.dart';
+import 'package:home_inventory/ui/pages/scan_to_add_article_page.dart';
 import 'package:home_inventory/ui/pages/choose_category_page.dart';
-import 'package:home_inventory/ui/pages/remove_item.dart';
+import 'package:home_inventory/ui/pages/scan_to_remove_article_page.dart';
 import 'package:home_inventory/ui/transitions/route_transition.dart';
 
 class MainPage extends StatefulWidget {
@@ -67,7 +67,7 @@ class _MainPageState extends State<MainPage> {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context, RouteTransition(startPage: this.widget, destinationPage: AddItemPage(title: ADD_ITEM_TITLE)));
+            Navigator.push(context, RouteTransition(startPage: this.widget, destinationPage: ScanToAddArticlePage(title: SCAN_TO_ADD_ARTICLE_TITLE)));
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +89,7 @@ class _MainPageState extends State<MainPage> {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context, RouteTransition(startPage: this.widget, destinationPage: RemoveItemPage(title: REMOVE_ITEM_TITLE)));
+            Navigator.push(context, RouteTransition(startPage: this.widget, destinationPage: ScanToRemoveArticlePage(title: SCAN_TO_REMOVE_ARTICLE_TITLE)));
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

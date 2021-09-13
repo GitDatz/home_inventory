@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:home_inventory/constants.dart';
+import 'package:home_inventory/utils/constants.dart';
 
-class RemoveItemPage extends StatefulWidget {
-  RemoveItemPage({Key key, this.title}) : super(key: key);
+class ScanToRemoveArticlePage extends StatefulWidget {
+  ScanToRemoveArticlePage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _RemoveItemPageState createState() => _RemoveItemPageState();
+  _ScanToRemoveArticlePage createState() => _ScanToRemoveArticlePage();
 }
 
-class _RemoveItemPageState extends State<RemoveItemPage> {
+class _ScanToRemoveArticlePage extends State<ScanToRemoveArticlePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _RemoveItemPageState extends State<RemoveItemPage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             _scanItemButton()
           ],
@@ -33,7 +33,7 @@ class _RemoveItemPageState extends State<RemoveItemPage> {
 
   Widget _scanItemButton() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(SIDE_PADDING, 0.0, SIDE_PADDING, 0.0),
+      padding: EdgeInsets.fromLTRB(SIDE_PADDING, TOP_PADDING, SIDE_PADDING, 0.0),
       child: SizedBox(
         height: BUTTON_HEIGHT,
         width: double.infinity,

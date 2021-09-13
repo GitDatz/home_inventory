@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:home_inventory/constants.dart';
+import 'package:home_inventory/utils/constants.dart';
 
 class ChooseCategoryPage extends StatefulWidget {
   ChooseCategoryPage({Key key, this.title}) : super(key: key);

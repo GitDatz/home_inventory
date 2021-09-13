@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:home_inventory/constants.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:home_inventory/ui/pages/add_article_page.dart';
 import 'package:home_inventory/ui/transitions/route_transition.dart';
+import 'package:home_inventory/utils/constants.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
-class AddItemPage extends StatefulWidget {
-  AddItemPage({Key key, this.title}) : super(key: key);
+class ScanToAddArticlePage extends StatefulWidget {
+  ScanToAddArticlePage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _AddItemPageState createState() => _AddItemPageState();
+  _ScanToAddArticlePage createState() => _ScanToAddArticlePage();
 }
 
-class _AddItemPageState extends State<AddItemPage> {
+class _ScanToAddArticlePage extends State<ScanToAddArticlePage> {
   String _scanResult = "";
 
   @override
@@ -21,16 +22,15 @@ class _AddItemPageState extends State<AddItemPage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-            widget.title,
-            textAlign: TextAlign.center
+          widget.title,
+          textAlign: TextAlign.center
         ),
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             _scanItemButton(),
-            _addArticleInformation()
           ],
         ),
       ),
@@ -39,12 +39,13 @@ class _AddItemPageState extends State<AddItemPage> {
 
   Widget _scanItemButton() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(SIDE_PADDING, 0.0, SIDE_PADDING, 0.0),
+      padding: EdgeInsets.fromLTRB(SIDE_PADDING, TOP_PADDING, SIDE_PADDING, 0.0),
       child: SizedBox(
         height: BUTTON_HEIGHT,
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () => { scanBarcodeNormal() },
+          onLongPress: () => { _testScan() },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -55,10 +56,6 @@ class _AddItemPageState extends State<AddItemPage> {
         )
       )
     );
-  }
-
-  Widget _addArticleInformation() {
-    return Text(_scanResult);
   }
 
   Future<void> scanBarcodeNormal() async {
@@ -79,7 +76,17 @@ class _AddItemPageState extends State<AddItemPage> {
 
     setState(() {
       _scanResult = barcodeScanRes;
+      _goToAddArticlePage();
       // TODO: based on if ID is found, go to AddNewItem or UpdateStock
     });
+  }
+
+  void _testScan() {
+    _scanResult = "abcd1234";
+    _goToAddArticlePage();
+  }
+
+  void _goToAddArticlePage() {
+    Navigator.push(context, RouteTransition(startPage: this.widget, destinationPage: AddArticlePage(title: ADD_ARTICLE_TITLE, articleId: _scanResult,)));
   }
 }

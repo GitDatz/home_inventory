@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:home_inventory/constants.dart';
+import 'package:home_inventory/utils/constants.dart';
 import 'package:home_inventory/ui/pages/root_page.dart';
 
 void main() async {

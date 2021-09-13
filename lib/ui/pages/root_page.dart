@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:home_inventory/constants.dart';
+import 'package:home_inventory/utils/constants.dart';
 import 'package:home_inventory/ui/pages/login_page.dart';
 import 'package:home_inventory/ui/pages/main_page.dart';
 

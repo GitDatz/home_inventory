@@ -7,8 +7,10 @@ const Color BACKGROUND_COLOR = Color(0xffe9e9e9);
 const String LOGIN_PAGE_TITLE = "Login";
 const String MAIN_PAGE_TITLE = "Home Inventory";
 const String CHOOSE_CATEGORY_TITLE = "Choose Category";
-const String ADD_ITEM_TITLE = "Add Item";
-const String REMOVE_ITEM_TITLE = "Remove Item";
+const String SCAN_TO_ADD_ARTICLE_TITLE = "Scan to Add Article";
+const String SCAN_TO_REMOVE_ARTICLE_TITLE = "Scan to Remove Article";
+const String ADD_ARTICLE_TITLE = "Add Article";
+const String REMOVE_ITEM_TITLE = "Remove Article";
 
 // Login Page
 const String EMAIL_HINT = "Enter email";
@@ -26,6 +28,7 @@ const double BUTTON_ICON_SIZE = 100.0;
 const double BUTTON_HEIGHT = 150.0;
 const double BUTTON_VERTICAL_MARGIN = 5.0;
 const double SIDE_PADDING = 15.0;
+const double TOP_PADDING = 15.0;
 
 // Choose Category Page
 const String BAKE_BUTTON_TEXT = "Bake";
