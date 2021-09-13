@@ -15,6 +15,10 @@ class AddArticlePage extends StatefulWidget {
 
 class _AddArticlePage extends State<AddArticlePage> {
   final _articleIdController = TextEditingController();
+  final _articleNameController = TextEditingController();
+  final _articleQuantityController = TextEditingController();
+  String _quantityType = 'kg';
+  String _category = 'other';
 
   @override
   void initState() {
@@ -62,7 +66,7 @@ class _AddArticlePage extends State<AddArticlePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _articleQuantityTextField(),
-              DropdownMenu(quantityList, 'kg', false),
+              DropdownMenu(_updateQuantityType, quantityList, _quantityType, false),
             ],
           ),
         ),
@@ -70,7 +74,7 @@ class _AddArticlePage extends State<AddArticlePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Category: '),
-            DropdownMenu(categoryList, 'other', true),
+            DropdownMenu(_updateCategory, categoryList, _category, true),
           ],
         ),
       ],
@@ -103,7 +107,7 @@ class _AddArticlePage extends State<AddArticlePage> {
       padding: EdgeInsets.fromLTRB(SIDE_PADDING, 0.0, SIDE_PADDING, 0.0),
       child: TextField(
         cursorColor: Colors.lightBlueAccent,
-        //controller: groceryNameController,
+        controller: _articleNameController,
         textCapitalization: TextCapitalization.sentences,
         decoration: InputDecoration(
           labelText: 'Name',
@@ -125,7 +129,7 @@ class _AddArticlePage extends State<AddArticlePage> {
         padding: EdgeInsets.fromLTRB(SIDE_PADDING, 0.0, SIDE_PADDING, 0.0),
         child: TextField(
           cursorColor: Colors.lightBlueAccent,
-          //controller: groceryNameController,
+          controller: _articleQuantityController,
           textCapitalization: TextCapitalization.sentences,
           decoration: InputDecoration(
             labelText: 'Quantity',
@@ -148,15 +152,31 @@ class _AddArticlePage extends State<AddArticlePage> {
         alignment: FractionalOffset.bottomCenter,
         child: Padding(padding: EdgeInsets.fromLTRB(SIDE_PADDING, 0.0, SIDE_PADDING, SIDE_PADDING),
           child:SizedBox(
-            height: 80,
+            height: ADD_ARTICLE_BUTTON_HEIGHT,
             width: double.infinity,
             child: ElevatedButton(
               child: Text('Add Article'),
-              onPressed: () {},
+              onPressed: () { _addArticle(); },
             ),
           ),
         ),
       ),
     );
+  }
+
+  void _addArticle() {
+    print("Article id: " + _articleIdController.text);
+    print("Article name: " + _articleNameController.text);
+    print("Article quantity: " + _articleQuantityController.text);
+    print("Article quantity type: " + _quantityType);
+    print("Article category: " + _category);
+  }
+
+  void _updateQuantityType(String quantityType) {
+    _quantityType = quantityType;
+  }
+
+  void _updateCategory(String category) {
+    _category = category;
   }
 }

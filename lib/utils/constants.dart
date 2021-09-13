@@ -43,8 +43,11 @@ const String SPICES_BUTTON_TEXT = "Spices";
 const String VEGGIES_BUTTON_TEXT = "Veggies";
 const String SHOW_ALL_BUTTON_TEXT = "Show All";
 
-// Add/Remove Item Page
+// Scan to Add/Remove Article Page
 const String SCAN_ITEM_BUTTON_TEXT = "Scan Item";
+
+// Add/Remove Article Page
+const double ADD_ARTICLE_BUTTON_HEIGHT = 80.0;
 
 // Backend
 const String COLLECTION = "articles";
