@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home_inventory/cubit/article_cubit.dart';
+import 'package:home_inventory/data/model/article_model.dart';
 import 'package:home_inventory/ui/widgets/dropdown_menu.dart';
 import 'package:home_inventory/utils/category.dart';
 import 'package:home_inventory/utils/constants.dart';
@@ -165,11 +168,15 @@ class _AddArticlePage extends State<AddArticlePage> {
   }
 
   void _addArticle() {
-    print("Article id: " + _articleIdController.text);
-    print("Article name: " + _articleNameController.text);
-    print("Article quantity: " + _articleQuantityController.text);
-    print("Article quantity type: " + _quantityType);
-    print("Article category: " + _category);
+    BlocProvider.of<ArticleCubit>(context).createArticle(
+        Article(
+          id: _articleIdController.text,
+          name: _articleNameController.text,
+          category: _category,
+          quantityType: _quantityType,
+          nrQuantity: int.parse(_articleQuantityController.text)
+        )
+    );
   }
 
   void _updateQuantityType(String quantityType) {

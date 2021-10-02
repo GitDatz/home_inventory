@@ -9,7 +9,7 @@ class ArticleDao {
   Future<void> createArticle(Article article) async {
     final database = await _databaseProvider.database;
     CollectionReference collectionReference = database.collection(COLLECTION);
-    return collectionReference.add({article.id, article.name, article.quantityType, article.nrQuantity});
+    return collectionReference.add(article.toJson());
   }
 
   Future<List<Article>> getAllArticles() async {
